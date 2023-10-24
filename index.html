@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>DOM-Task</title>
+  </head>
+  <body>
+    <script>
+      // creat element
+      let body = document.querySelector("body");
+      const btnOpen = document.createElement("button");
+      const modal = document.createElement("div");
+      const closeModal = document.createElement("button");
+
+      // text elaveleri
+      closeModal.textContent = "x";
+      modal.textContent = "It is Modal";
+      btnOpen.textContent = "Open Modal";
+
+      //   elave classlar
+      modal.classList.add("modal");
+      closeModal.classList.add("closeModal");
+
+      //   clickler
+      btnOpen.onclick = () => {
+        modal.classList.add("openModal");
+      };
+      closeModal.onclick = () => {
+        modal.classList.remove("openModal");
+      };
+
+      //   bodye saliriq
+      modal.append(closeModal);
+      body.append(btnOpen, modal);
+    </script>
+  </body>
+</html>
